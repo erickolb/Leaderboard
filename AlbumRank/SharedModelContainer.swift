@@ -3,7 +3,7 @@ import SwiftData
 
 enum AppGroup {
     // Change this in both entitlements files if you change the app's bundle ID.
-    static let identifier = "group.com.example.AlbumRank"
+    static let identifier = "group.me.erickolb.AlbumRank"
 }
 
 enum SharedModelContainer {

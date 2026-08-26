@@ -21,7 +21,7 @@ The app and Share Extension use an App Group so both can access the same on-devi
 2. Change `com.example.AlbumRank` to a bundle identifier you own.
 3. Repeat for `AlbumRankShare`, using the same prefix and an extension suffix.
 4. Add the App Groups capability to both targets and create/select one shared group.
-5. Replace `group.com.example.AlbumRank` with that group in `AlbumRank/SharedModelContainer.swift` and both `.entitlements` files.
+5. Replace `group.me.erickolb.AlbumRank` with that group in `AlbumRank/SharedModelContainer.swift` and both `.entitlements` files.
 
 The project uses SwiftData, so lists and their items persist automatically on the device. No account, server, or Apple Notes access is required.
 
