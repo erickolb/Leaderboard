@@ -13,7 +13,7 @@ enum AlbumTextParser {
                 if !album.isEmpty, !artist.isEmpty { return "\(artist) - \(album)" }
             }
 
-            if let separator = value.range(of: " - ") {
+            if let separator = value.range(of: #"\s+[-–—]\s+"#, options: .regularExpression) {
                 let album = cleaned(String(value[..<separator.lowerBound]))
                 let artist = cleaned(String(value[separator.upperBound...]))
                 if !album.isEmpty, !artist.isEmpty { return "\(artist) - \(album)" }
