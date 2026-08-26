@@ -10,8 +10,15 @@ enum AlbumTextParser {
                 let album = cleaned(String(value[..<separator.lowerBound]))
                     .trimmingCharacters(in: CharacterSet(charactersIn: "\"“”"))
                 let artist = cleaned(String(value[separator.upperBound...]))
-                if !album.isEmpty, !artist.isEmpty { return "\(artist) — \(album)" }
+                if !album.isEmpty, !artist.isEmpty { return "\(artist) - \(album)" }
             }
+
+            if let separator = value.range(of: " - ") {
+                let album = cleaned(String(value[..<separator.lowerBound]))
+                let artist = cleaned(String(value[separator.upperBound...]))
+                if !album.isEmpty, !artist.isEmpty { return "\(artist) - \(album)" }
+            }
+
             return value
         }
         return ""
