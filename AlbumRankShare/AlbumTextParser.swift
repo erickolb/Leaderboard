@@ -7,21 +7,29 @@ enum AlbumTextParser {
             guard !value.isEmpty, !looksLikeURL(value) else { continue }
 
             if let separator = value.range(of: " by ", options: .caseInsensitive) {
-                let album = cleaned(String(value[..<separator.lowerBound]))
-                    .trimmingCharacters(in: CharacterSet(charactersIn: "\"“”"))
+                let album = cleanedAlbum(String(value[..<separator.lowerBound])
+                    .trimmingCharacters(in: CharacterSet(charactersIn: "\"“”")))
                 let artist = cleaned(String(value[separator.upperBound...]))
                 if !album.isEmpty, !artist.isEmpty { return "\(artist) - \(album)" }
             }
 
             if let separator = value.range(of: #"\s+[-–—]\s+"#, options: .regularExpression) {
-                let album = cleaned(String(value[..<separator.lowerBound]))
+                let album = cleanedAlbum(String(value[..<separator.lowerBound]))
                 let artist = cleaned(String(value[separator.upperBound...]))
                 if !album.isEmpty, !artist.isEmpty { return "\(artist) - \(album)" }
             }
 
-            return value
+            return cleanedAlbum(value)
         }
         return ""
+    }
+
+    private static func cleanedAlbum(_ value: String) -> String {
+        cleaned(value.replacingOccurrences(
+            of: #"\s*\[Explicit\]\s*"#,
+            with: " ",
+            options: [.regularExpression, .caseInsensitive]
+        ))
     }
 
     private static func cleaned(_ value: String) -> String {
