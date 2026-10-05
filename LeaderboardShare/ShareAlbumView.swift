@@ -32,7 +32,7 @@ struct ShareAlbumView: View {
 
                 Section("Add to") {
                     if lists.isEmpty {
-                        Text("Create a list in AlbumRank first.")
+                        Text("Create a list in Leaderboard first.")
                             .foregroundStyle(.secondary)
                     } else {
                         Picker("Ranked list", selection: $selectedListID) {

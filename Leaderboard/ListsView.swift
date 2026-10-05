@@ -37,7 +37,7 @@ struct ListsView: View {
                     }
                 }
             }
-            .navigationTitle("AlbumRank")
+            .navigationTitle("Leaderboard")
             .navigationDestination(for: RankedList.self) { list in
                 RankedListView(list: list)
             }

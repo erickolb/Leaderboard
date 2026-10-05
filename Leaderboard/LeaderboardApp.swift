@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct AlbumRankApp: App {
+struct LeaderboardApp: App {
     var body: some Scene {
         WindowGroup {
             ListsView()

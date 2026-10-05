@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A070 /* AlbumRankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040 /* AlbumRankApp.swift */; };
+		A070 /* LeaderboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040 /* LeaderboardApp.swift */; };
 		A071 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041 /* Models.swift */; };
 		A072 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042 /* ListsView.swift */; };
 		A073 /* RankedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043 /* RankedListView.swift */; };
-		A074 /* AlbumRankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044 /* AlbumRankTests.swift */; };
+		A074 /* LeaderboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044 /* LeaderboardTests.swift */; };
 		A075 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046 /* SharedModelContainer.swift */; };
 		A076 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041 /* Models.swift */; };
 		A077 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046 /* SharedModelContainer.swift */; };
 		A078 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048 /* ShareViewController.swift */; };
 		A079 /* ShareAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049 /* ShareAlbumView.swift */; };
-		A07A /* AlbumRankShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A032 /* AlbumRankShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A07A /* LeaderboardShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A032 /* LeaderboardShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A07B /* AlbumTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A /* AlbumTextParser.swift */; };
 		A07C /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D /* AcknowledgementsView.swift */; };
 		A07D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04E /* Assets.xcassets */; };
@@ -29,14 +29,14 @@
 			containerPortal = A001 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A020;
-			remoteInfo = AlbumRank;
+			remoteInfo = Leaderboard;
 		};
 		A063 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A001 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A022;
-			remoteInfo = AlbumRankShare;
+			remoteInfo = LeaderboardShare;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,7 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A07A /* AlbumRankShare.appex in Embed App Extensions */,
+				A07A /* LeaderboardShare.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,22 +55,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A030 /* AlbumRank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumRank.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A031 /* AlbumRankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumRankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A032 /* AlbumRankShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlbumRankShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A040 /* AlbumRankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRankApp.swift; sourceTree = "<group>"; };
+		A030 /* Leaderboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leaderboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A031 /* LeaderboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeaderboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A032 /* LeaderboardShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LeaderboardShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A040 /* LeaderboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardApp.swift; sourceTree = "<group>"; };
 		A041 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A042 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		A043 /* RankedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedListView.swift; sourceTree = "<group>"; };
-		A044 /* AlbumRankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRankTests.swift; sourceTree = "<group>"; };
+		A044 /* LeaderboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTests.swift; sourceTree = "<group>"; };
 		A045 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text.markdown; path = README.md; sourceTree = "<group>"; };
 		A046 /* SharedModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModelContainer.swift; sourceTree = "<group>"; };
-		A047 /* AlbumRank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumRank.entitlements; sourceTree = "<group>"; };
+		A047 /* Leaderboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leaderboard.entitlements; sourceTree = "<group>"; };
 		A048 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		A049 /* ShareAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAlbumView.swift; sourceTree = "<group>"; };
 		A04A /* AlbumTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTextParser.swift; sourceTree = "<group>"; };
 		A04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A04C /* AlbumRankShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumRankShare.entitlements; sourceTree = "<group>"; };
+		A04C /* LeaderboardShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LeaderboardShare.entitlements; sourceTree = "<group>"; };
 		A04D /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		A04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,9 +103,9 @@
 		A010 = {
 			isa = PBXGroup;
 			children = (
-				A012 /* AlbumRank */,
-				A013 /* AlbumRankTests */,
-				A014 /* AlbumRankShare */,
+				A012 /* Leaderboard */,
+				A013 /* LeaderboardTests */,
+				A014 /* LeaderboardShare */,
 				A011 /* Products */,
 				A045 /* README.md */,
 			);
@@ -114,54 +114,54 @@
 		A011 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A030 /* AlbumRank.app */,
-				A031 /* AlbumRankTests.xctest */,
-				A032 /* AlbumRankShare.appex */,
+				A030 /* Leaderboard.app */,
+				A031 /* LeaderboardTests.xctest */,
+				A032 /* LeaderboardShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A012 /* AlbumRank */ = {
+		A012 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				A040 /* AlbumRankApp.swift */,
+				A040 /* LeaderboardApp.swift */,
 				A041 /* Models.swift */,
 				A042 /* ListsView.swift */,
 				A043 /* RankedListView.swift */,
 				A046 /* SharedModelContainer.swift */,
-				A047 /* AlbumRank.entitlements */,
+				A047 /* Leaderboard.entitlements */,
 				A04D /* AcknowledgementsView.swift */,
 				A04E /* Assets.xcassets */,
 			);
-			path = AlbumRank;
+			path = Leaderboard;
 			sourceTree = "<group>";
 		};
-		A013 /* AlbumRankTests */ = {
+		A013 /* LeaderboardTests */ = {
 			isa = PBXGroup;
 			children = (
-				A044 /* AlbumRankTests.swift */,
+				A044 /* LeaderboardTests.swift */,
 			);
-			path = AlbumRankTests;
+			path = LeaderboardTests;
 			sourceTree = "<group>";
 		};
-		A014 /* AlbumRankShare */ = {
+		A014 /* LeaderboardShare */ = {
 			isa = PBXGroup;
 			children = (
 				A048 /* ShareViewController.swift */,
 				A049 /* ShareAlbumView.swift */,
 				A04A /* AlbumTextParser.swift */,
 				A04B /* Info.plist */,
-				A04C /* AlbumRankShare.entitlements */,
+				A04C /* LeaderboardShare.entitlements */,
 			);
-			path = AlbumRankShare;
+			path = LeaderboardShare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A020 /* AlbumRank */ = {
+		A020 /* Leaderboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A101 /* Build configuration list for PBXNativeTarget "AlbumRank" */;
+			buildConfigurationList = A101 /* Build configuration list for PBXNativeTarget "Leaderboard" */;
 			buildPhases = (
 				A050 /* Sources */,
 				A051 /* Frameworks */,
@@ -173,14 +173,14 @@
 			dependencies = (
 				A062 /* PBXTargetDependency */,
 			);
-			name = AlbumRank;
-			productName = AlbumRank;
-			productReference = A030 /* AlbumRank.app */;
+			name = Leaderboard;
+			productName = Leaderboard;
+			productReference = A030 /* Leaderboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A021 /* AlbumRankTests */ = {
+		A021 /* LeaderboardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A102 /* Build configuration list for PBXNativeTarget "AlbumRankTests" */;
+			buildConfigurationList = A102 /* Build configuration list for PBXNativeTarget "LeaderboardTests" */;
 			buildPhases = (
 				A053 /* Sources */,
 				A054 /* Frameworks */,
@@ -191,14 +191,14 @@
 			dependencies = (
 				A060 /* PBXTargetDependency */,
 			);
-			name = AlbumRankTests;
-			productName = AlbumRankTests;
-			productReference = A031 /* AlbumRankTests.xctest */;
+			name = LeaderboardTests;
+			productName = LeaderboardTests;
+			productReference = A031 /* LeaderboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A022 /* AlbumRankShare */ = {
+		A022 /* LeaderboardShare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A103 /* Build configuration list for PBXNativeTarget "AlbumRankShare" */;
+			buildConfigurationList = A103 /* Build configuration list for PBXNativeTarget "LeaderboardShare" */;
 			buildPhases = (
 				A057 /* Sources */,
 				A058 /* Frameworks */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = AlbumRankShare;
-			productName = AlbumRankShare;
-			productReference = A032 /* AlbumRankShare.appex */;
+			name = LeaderboardShare;
+			productName = LeaderboardShare;
+			productReference = A032 /* LeaderboardShare.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +220,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = A100 /* Build configuration list for PBXProject "AlbumRank" */;
+			buildConfigurationList = A100 /* Build configuration list for PBXProject "Leaderboard" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -233,9 +233,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A020 /* AlbumRank */,
-				A021 /* AlbumRankTests */,
-				A022 /* AlbumRankShare */,
+				A020 /* Leaderboard */,
+				A021 /* LeaderboardTests */,
+				A022 /* LeaderboardShare */,
 			);
 		};
 /* End PBXProject section */
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A070 /* AlbumRankApp.swift in Sources */,
+				A070 /* LeaderboardApp.swift in Sources */,
 				A071 /* Models.swift in Sources */,
 				A072 /* ListsView.swift in Sources */,
 				A073 /* RankedListView.swift in Sources */,
@@ -283,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A074 /* AlbumRankTests.swift in Sources */,
+				A074 /* LeaderboardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +304,12 @@
 /* Begin PBXTargetDependency section */
 		A060 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A020 /* AlbumRank */;
+			target = A020 /* Leaderboard */;
 			targetProxy = A061 /* PBXContainerItemProxy */;
 		};
 		A062 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A022 /* AlbumRankShare */;
+			target = A022 /* LeaderboardShare */;
 			targetProxy = A063 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -320,6 +320,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
@@ -337,7 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AlbumRank/AlbumRank.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Leaderboard/Leaderboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 27LF94QN45;
@@ -347,7 +350,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.AlbumRank;
+				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.Leaderboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -361,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AlbumRank/AlbumRank.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Leaderboard/Leaderboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 27LF94QN45;
@@ -371,7 +374,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.AlbumRank;
+				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.Leaderboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -389,13 +392,13 @@
 				DEVELOPMENT_TEAM = 27LF94QN45;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.AlbumRankTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.LeaderboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumRank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AlbumRank";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leaderboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leaderboard";
 			};
 			name = Debug;
 		};
@@ -407,13 +410,13 @@
 				DEVELOPMENT_TEAM = 27LF94QN45;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.AlbumRankTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.LeaderboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumRank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AlbumRank";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leaderboard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Leaderboard";
 			};
 			name = Release;
 		};
@@ -421,15 +424,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_ENTITLEMENTS = AlbumRankShare/AlbumRankShare.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LeaderboardShare/LeaderboardShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 27LF94QN45;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = AlbumRankShare/Info.plist;
+				INFOPLIST_FILE = LeaderboardShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.AlbumRank.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.Leaderboard.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -444,15 +447,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_ENTITLEMENTS = AlbumRankShare/AlbumRankShare.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LeaderboardShare/LeaderboardShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 27LF94QN45;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = AlbumRankShare/Info.plist;
+				INFOPLIST_FILE = LeaderboardShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.AlbumRank.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = me.erickolb.Leaderboard.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -466,7 +469,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A100 /* Build configuration list for PBXProject "AlbumRank" */ = {
+		A100 /* Build configuration list for PBXProject "Leaderboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A110 /* Debug */,
@@ -475,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A101 /* Build configuration list for PBXNativeTarget "AlbumRank" */ = {
+		A101 /* Build configuration list for PBXNativeTarget "Leaderboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A112 /* Debug */,
@@ -484,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A102 /* Build configuration list for PBXNativeTarget "AlbumRankTests" */ = {
+		A102 /* Build configuration list for PBXNativeTarget "LeaderboardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A114 /* Debug */,
@@ -493,7 +496,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A103 /* Build configuration list for PBXNativeTarget "AlbumRankShare" */ = {
+		A103 /* Build configuration list for PBXNativeTarget "LeaderboardShare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A116 /* Debug */,
