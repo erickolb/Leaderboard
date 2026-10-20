@@ -46,7 +46,7 @@ def make_source(items, fetch=download):
         match = TAG.fullmatch(release["tag_name"])
         if match and not release["draft"]:
             candidates.append((tuple(map(int, match[1].split("."))) + (int(match[2]),), release))
-    candidates.sort(key=lambda item: item[0], reverse=True)
+    candidates.sort(key=lambda item: (item[0][:-1], item[0][-1]), reverse=True)
     versions, privacy, seen = [], {}, set()
     for numbers, release in candidates:
         version = ".".join(map(str, numbers[:-1]))
