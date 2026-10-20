@@ -3,3 +3,7 @@
 /build-ipa.*/
 *.xcuserstate
 xcuserdata/
+
+/docs/apps.json
+__pycache__/
+/docs/index.html
