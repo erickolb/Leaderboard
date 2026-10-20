@@ -1,5 +1,11 @@
 # Leaderboard for iOS
 
+**Latest published app: [1.2 (build 4)](https://github.com/erickolb/Leaderboard/releases/tag/leaderboard-v1.2-build4)** — personal SideStore prerelease for iOS 26 or later.
+
+[Download page and Add to SideStore](https://erickolb.github.io/Leaderboard/) · [SideStore source](https://erickolb.github.io/Leaderboard/apps.json) · [Setup and publishing guide](docs/sidestore.md)
+
+The download page and source automatically track published IPAs, including personal prereleases. The release above is the current baseline; use the download page for subsequent versions.
+
 A small native SwiftUI app for creating ranked lists, adding items, dragging them into order, and sharing the result as numbered text to Notes or any other app. It also includes a Share Extension for adding an Amazon Music album to an existing list.
 
 ## Requirements
