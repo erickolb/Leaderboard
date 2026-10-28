@@ -3,7 +3,7 @@ import SwiftData
 
 struct ListsView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \RankedList.createdAt, order: .reverse) private var lists: [RankedList]
+    @Query(sort: [SortDescriptor(\RankedList.sortOrder), SortDescriptor(\RankedList.createdAt, order: .reverse)]) private var lists: [RankedList]
     @State private var showingNewList = false
     @State private var newListTitle = ""
     @State private var showingAcknowledgements = false
@@ -34,6 +34,7 @@ struct ListsView: View {
                             }
                         }
                         .onDelete(perform: deleteLists)
+                        .onMove(perform: moveLists)
                     }
                 }
             }
@@ -42,6 +43,10 @@ struct ListsView: View {
                 RankedListView(list: list)
             }
             .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    EditButton()
+                        .disabled(lists.isEmpty)
+                }
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
                         Button {
@@ -83,11 +88,17 @@ struct ListsView: View {
     private func createList() {
         let title = newListTitle.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !title.isEmpty else { return }
-        modelContext.insert(RankedList(title: title))
+        modelContext.insert(RankedList(title: title, sortOrder: (lists.first?.sortOrder ?? 0) - 1))
         newListTitle = ""
     }
 
     private func deleteLists(at offsets: IndexSet) {
         for index in offsets { modelContext.delete(lists[index]) }
+    }
+
+    private func moveLists(from source: IndexSet, to destination: Int) {
+        var reordered = lists
+        reordered.move(fromOffsets: source, toOffset: destination)
+        for (index, list) in reordered.enumerated() { list.sortOrder = index }
     }
 }

@@ -5,7 +5,7 @@ import UniformTypeIdentifiers
 
 struct ShareAlbumView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \RankedList.createdAt, order: .reverse) private var lists: [RankedList]
+    @Query(sort: [SortDescriptor(\RankedList.sortOrder), SortDescriptor(\RankedList.createdAt, order: .reverse)]) private var lists: [RankedList]
 
     let extensionContext: NSExtensionContext?
 

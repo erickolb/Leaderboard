@@ -1,7 +1,39 @@
 import XCTest
+import SwiftData
 @testable import Leaderboard
 
 final class LeaderboardTests: XCTestCase {
+    @MainActor
+    func testListOrderPreservesNewestFirstUntilCustomized() throws {
+        let container = try ModelContainer(
+            for: RankedList.self, RankedItem.self,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+        )
+        let context = container.mainContext
+        let older = RankedList(title: "Older", createdAt: Date(timeIntervalSince1970: 1))
+        let newer = RankedList(title: "Newer", createdAt: Date(timeIntervalSince1970: 2))
+        context.insert(older)
+        context.insert(newer)
+        try context.save()
+
+        let descriptor = FetchDescriptor<RankedList>(sortBy: [
+            SortDescriptor(\RankedList.sortOrder),
+            SortDescriptor(\RankedList.createdAt, order: .reverse)
+        ])
+        XCTAssertEqual(try context.fetch(descriptor).map(\.title), ["Newer", "Older"])
+
+        older.sortOrder = 0
+        newer.sortOrder = 1
+        try context.save()
+        let freshContext = ModelContext(container)
+        XCTAssertEqual(try freshContext.fetch(descriptor).map(\.title), ["Older", "Newer"])
+
+        let newest = RankedList(title: "Newest", sortOrder: -1)
+        context.insert(newest)
+        try context.save()
+        XCTAssertEqual(try context.fetch(descriptor).map(\.title), ["Newest", "Older", "Newer"])
+    }
+
     func testResignedGroupSelection() {
         let base = AppGroup.baseIdentifier
         XCTAssertEqual(AppGroup.resolvedIdentifier(in: [base]), base)

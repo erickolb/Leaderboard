@@ -12,7 +12,7 @@ xcodebuild -project Leaderboard.xcodeproj -scheme Leaderboard \
   -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
   -derivedDataPath "${DERIVED_DATA_PATH:-$WORK/DerivedData}" \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
-  CURRENT_PROJECT_VERSION="${BUILD_NUMBER:-4}" build
+  CURRENT_PROJECT_VERSION="${BUILD_NUMBER:-5}" build
 
 APP="$WORK/Payload/Leaderboard.app"
 ditto "${DERIVED_DATA_PATH:-$WORK/DerivedData}/Build/Products/Release-iphoneos/Leaderboard.app" "$APP"

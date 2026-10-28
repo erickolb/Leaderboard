@@ -6,14 +6,16 @@ final class RankedList {
     var id: UUID = UUID()
     var title: String
     var createdAt: Date
+    var sortOrder: Int = 0
 
     @Relationship(deleteRule: .cascade, inverse: \RankedItem.list)
     var items: [RankedItem]
 
-    init(title: String, createdAt: Date = .now, items: [RankedItem] = []) {
+    init(title: String, createdAt: Date = .now, items: [RankedItem] = [], sortOrder: Int = 0) {
         self.title = title
         self.createdAt = createdAt
         self.items = items
+        self.sortOrder = sortOrder
     }
 
     var rankedItems: [RankedItem] {

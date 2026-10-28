@@ -1,6 +1,6 @@
 # Leaderboard for iOS
 
-**Latest published app: [1.2 (build 4)](https://github.com/erickolb/Leaderboard/releases/tag/leaderboard-v1.2-build4)** — personal SideStore prerelease for iOS 26 or later.
+**Latest published app: [1.3 (build 5)](https://github.com/erickolb/Leaderboard/releases/tag/leaderboard-v1.3-build5)** — personal SideStore prerelease for iOS 26 or later.
 
 [Download page and Add to SideStore](https://erickolb.github.io/Leaderboard/) · [SideStore source](https://erickolb.github.io/Leaderboard/apps.json) · [Setup and publishing guide](docs/sidestore.md)
 
@@ -18,7 +18,7 @@ A small native SwiftUI app for creating ranked lists, adding items, dragging the
 The Mac needs Xcode and SSH-key access, but does not need Codex or an Apple signing account for this build. The script sends the current working files, including uncommitted changes, to a new directory under `~/LeaderboardBuilds` and downloads the finished IPA.
 
 ```powershell
-.\scripts\build-on-mac.ps1 -BuildNumber 4
+.\scripts\build-on-mac.ps1 -BuildNumber 5
 ```
 
 The default build host is `erickolb@barovia.chateaulore.net`. `HostKeyAlias` defaults to `barovia.local`, the name under which this Mac's SSH key was originally recorded. Increment the build number for each new distributed build. Each run retains its isolated Mac build directory and log for troubleshooting; these can be removed after the build is no longer needed.
@@ -26,7 +26,7 @@ The default build host is `erickolb@barovia.chateaulore.net`. `HostKeyAlias` def
 Alternatively, run directly on a Mac:
 
 ```sh
-BUILD_NUMBER=4 bash scripts/build-ipa.sh
+BUILD_NUMBER=5 bash scripts/build-ipa.sh
 ```
 
 The output is `dist/Leaderboard.ipa`. It has temporary ad-hoc signatures that preserve the App Group entitlements; it cannot be installed directly. SideStore supplies the device-valid signatures and provisioning profiles. No Apple password or distribution certificate is needed on the build Mac.
@@ -66,6 +66,7 @@ The project uses SwiftData, so lists and their items persist automatically on th
 ## Included in this prototype
 
 - Create and delete named lists
+- Use Edit on the Leaderboard screen to drag lists into a saved order; new lists appear at the top
 - Add and edit list items
 - Drag to reorder using the standard Edit button and move handles
 - Swipe to delete items
