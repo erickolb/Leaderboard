@@ -17,15 +17,15 @@ struct ShareAlbumView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Album") {
+                Section("Album or track") {
                     if isLoading {
                         HStack {
                             ProgressView()
-                            Text("Reading shared album…")
+                            Text("Reading shared music…")
                                 .foregroundStyle(.secondary)
                         }
                     } else {
-                        TextField("Artist — Album", text: $albumText, axis: .vertical)
+                        TextField("Artist — Album or track", text: $albumText, axis: .vertical)
                             .lineLimit(1...3)
                     }
                 }
@@ -50,7 +50,7 @@ struct ShareAlbumView: View {
                     }
                 }
             }
-            .navigationTitle("Add Album")
+            .navigationTitle("Add to Leaderboard")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -73,7 +73,7 @@ struct ShareAlbumView: View {
     private func loadSharedAlbum() async {
         guard let inputItems = extensionContext?.inputItems as? [NSExtensionItem] else {
             isLoading = false
-            errorMessage = "No shared album information was found."
+            errorMessage = "No shared music information was found."
             return
         }
 
@@ -94,21 +94,23 @@ struct ShareAlbumView: View {
                 }
                 if provider.hasItemConformingToTypeIdentifier(UTType.plainText.identifier),
                    let value = try? await provider.sharedItem(for: UTType.plainText.identifier),
-                   let text = value as? String {
+                   let text = (value as? String) ?? (value as? Data).flatMap({ String(data: $0, encoding: .utf8) }) {
                     textCandidates.append(text)
                 }
             }
         }
 
-        if let sharedURL,
-           let metadata = try? await LPMetadataProvider().startFetchingMetadata(for: sharedURL),
-           let title = metadata.title {
-            textCandidates.insert(title, at: 0)
+        if AlbumTextParser.completeMusicText(from: textCandidates) == nil, let sharedURL {
+            let provider = LPMetadataProvider()
+            provider.timeout = 6
+            if let metadata = try? await provider.startFetchingMetadata(for: sharedURL), let title = metadata.title {
+                textCandidates.insert(title, at: 0)
+            }
         }
 
         albumText = AlbumTextParser.bestAlbumText(from: textCandidates)
         if albumText.isEmpty {
-            errorMessage = "Album details weren’t detected. Enter the artist and album manually."
+            errorMessage = "Music details weren’t detected. Enter the artist and album or track manually."
         }
         isLoading = false
     }
@@ -126,7 +128,7 @@ struct ShareAlbumView: View {
             try modelContext.save()
             extensionContext?.completeRequest(returningItems: nil)
         } catch {
-            errorMessage = "The album couldn’t be added. Please try again."
+            errorMessage = "The item couldn’t be added. Please try again."
         }
     }
 

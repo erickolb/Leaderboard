@@ -1,3 +1,3 @@
 # TODO
 
-- [ ] Add support for sharing a single from Amazon Music
+- [x] Add support for sharing a single from Amazon Music

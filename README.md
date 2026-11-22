@@ -1,12 +1,12 @@
 # Leaderboard for iOS
 
-**Latest published app: [1.3 (build 5)](https://github.com/erickolb/Leaderboard/releases/tag/leaderboard-v1.3-build5)** — personal SideStore prerelease for iOS 26 or later.
+**Latest published app: [1.4 (build 6)](https://github.com/erickolb/Leaderboard/releases/tag/leaderboard-v1.4-build6)** — personal SideStore prerelease for iOS 26 or later.
 
 [Download page and Add to SideStore](https://erickolb.github.io/Leaderboard/) · [SideStore source](https://erickolb.github.io/Leaderboard/apps.json) · [Setup and publishing guide](docs/sidestore.md)
 
 The download page and source automatically track published IPAs, including personal prereleases. The release above is the current baseline; use the download page for subsequent versions.
 
-A small native SwiftUI app for creating ranked lists, adding items, dragging them into order, and sharing the result as numbered text to Notes or any other app. It also includes a Share Extension for adding an Amazon Music album to an existing list.
+A small native SwiftUI app for creating ranked lists, adding items, dragging them into order, and sharing the result as numbered text to Notes or any other app. It also includes a Share Extension for adding an Amazon Music album or individual track to an existing list.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ A small native SwiftUI app for creating ranked lists, adding items, dragging the
 The Mac needs Xcode and SSH-key access, but does not need Codex or an Apple signing account for this build. The script sends the current working files, including uncommitted changes, to a new directory under `~/LeaderboardBuilds` and downloads the finished IPA.
 
 ```powershell
-.\scripts\build-on-mac.ps1 -BuildNumber 5
+.\scripts\build-on-mac.ps1 -BuildNumber 6
 ```
 
 The default build host is `erickolb@barovia.chateaulore.net`. `HostKeyAlias` defaults to `barovia.local`, the name under which this Mac's SSH key was originally recorded. Increment the build number for each new distributed build. Each run retains its isolated Mac build directory and log for troubleshooting; these can be removed after the build is no longer needed.
@@ -26,7 +26,7 @@ The default build host is `erickolb@barovia.chateaulore.net`. `HostKeyAlias` def
 Alternatively, run directly on a Mac:
 
 ```sh
-BUILD_NUMBER=5 bash scripts/build-ipa.sh
+BUILD_NUMBER=6 bash scripts/build-ipa.sh
 ```
 
 The output is `dist/Leaderboard.ipa`. It has temporary ad-hoc signatures that preserve the App Group entitlements; it cannot be installed directly. SideStore supplies the device-valid signatures and provisioning profiles. No Apple password or distribution certificate is needed on the build Mac.
@@ -72,11 +72,22 @@ The project uses SwiftData, so lists and their items persist automatically on th
 - Swipe to delete items
 - Persistent on-device storage
 - Share a numbered plain-text ranking via the iOS share sheet
-- Share an Amazon Music album into Leaderboard, edit the detected `Artist — Album` text, choose a list, and append it
+- Share an Amazon Music album or track into Leaderboard, edit the detected `Artist - Album/Track` text, choose a list, and append it
 - App icon artwork supplied by Magnific on Flaticon, with attribution available from the in-app menu
 
-Amazon Music’s share payload can vary. Leaderboard first tries the shared title and link metadata, then leaves the detected text editable so an album can always be added.
+Amazon Music’s share payload can vary. Leaderboard recognizes text such as `Check out "Nightshift Superstar" by Muse on Amazon Music.` and adds `Muse - Nightshift Superstar`. Complete shared text takes priority over a title-only preview and avoids a network lookup. If no artist/title pair is available, the extension attempts a bounded link-metadata lookup and leaves the result editable. Existing album formats remain supported.
 
 ## Attribution
 
 [Score board icons created by Magnific - Flaticon](https://www.flaticon.com/free-icons/score-board)
+
+## Music share parser checks
+
+Run these on a Mac without booting an iOS simulator:
+
+```sh
+swiftc LeaderboardShare/AlbumTextParser.swift scripts/test-music-parser.swift -o /tmp/leaderboard-parser-tests
+/tmp/leaderboard-parser-tests
+```
+
+The checks include the captured Muse track, Beck’s copied share text with an attached URL, title-only preview precedence, existing album formats, explicit labels, and quoted titles.
